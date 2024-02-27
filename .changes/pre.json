@@ -2,7 +2,10 @@
   "tag": "beta",
   "changes": [
     ".changes/beta.md",
+    ".changes/clipboard-html.md",
+    ".changes/dialog-can-create-directories.md",
     ".changes/fix-zbus-import.md",
+    ".changes/http-user-agent.md",
     ".changes/msrv-1.75.md",
     ".changes/tauri-beta-4.md"
   ]

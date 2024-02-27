@@ -1,5 +1,9 @@
 # Changelog
 
+## \[2.0.0-beta.2]
+
+- [`ae56b13`](https://github.com/tauri-apps/plugins-workspace/commit/ae56b13a4d49dbf922b8a0fbb0d557bb63c1d72b)([#983](https://github.com/tauri-apps/plugins-workspace/pull/983)) Allow `User-Agent` header to be set.
+
 ## \[2.0.0-beta.1]
 
 - [`569defb`](https://github.com/tauri-apps/plugins-workspace/commit/569defbe9492e38938554bb7bdc1be9151456d21) Update to tauri beta.4.
@@ -72,7 +76,7 @@
   371\)) First v2 alpha release!
   !
   371\)) First v2 alpha release!
-ace/pull/371)) First v2 alpha release!
+  ace/pull/371)) First v2 alpha release!
   371\)) First v2 alpha release!
   !
   371\)) First v2 alpha release!
