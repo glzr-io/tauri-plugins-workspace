@@ -5,7 +5,7 @@
 #![cfg(target_os = "windows")]
 
 use crate::SingleInstanceCallback;
-use std::ffi::CStr;
+use std::{ffi::CStr, process};
 use tauri::{
     plugin::{self, TauriPlugin},
     AppHandle, Manager, RunEvent, Runtime,
@@ -100,6 +100,8 @@ pub fn destroy<R: Runtime, M: Manager<R>>(manager: &M) {
     if let Some(hwnd) = manager.try_state::<TargetWindowHandle>() {
         unsafe { DestroyWindow(hwnd.0) };
     }
+
+    process::exit(0);
 }
 
 unsafe extern "system" fn single_instance_window_proc<R: Runtime>(
