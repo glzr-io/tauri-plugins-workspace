@@ -64,6 +64,7 @@ pub fn init<R: Runtime>(f: Box<SingleInstanceCallback<R>>) -> TauriPlugin<R> {
                         };
                         SendMessageW(hwnd, WM_COPYDATA, 0, &cds as *const _ as _);
                         app.exit(0);
+                        process::exit(0);
                     }
                 }
             } else {
