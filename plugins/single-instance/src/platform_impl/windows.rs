@@ -31,7 +31,6 @@ struct TargetWindowHandle(isize);
 const WMCOPYDATA_SINGLE_INSTANCE_DATA: usize = 1542;
 
 pub fn init<R: Runtime>(f: Box<SingleInstanceCallback<R>>) -> TauriPlugin<R> {
-    println!("plugin init!");
     plugin::Builder::new("single-instance")
         .setup(|app, _api| {
             let id = &app.config().identifier;
@@ -86,7 +85,6 @@ pub fn init<R: Runtime>(f: Box<SingleInstanceCallback<R>>) -> TauriPlugin<R> {
         })
         .on_event(|app, event| {
             if let RunEvent::Exit = event {
-                println!("RunEvent::Exit");
                 destroy(app);
             }
         })
@@ -103,9 +101,6 @@ pub fn destroy<R: Runtime, M: Manager<R>>(manager: &M) {
     if let Some(hwnd) = manager.try_state::<TargetWindowHandle>() {
         unsafe { DestroyWindow(hwnd.0) };
     }
-
-    println!("destroyed!");
-    process::exit(0);
 }
 
 unsafe extern "system" fn single_instance_window_proc<R: Runtime>(
